@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "http://datadashboard.health.gov.il",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
+  

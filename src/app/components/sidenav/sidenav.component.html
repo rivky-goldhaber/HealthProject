@@ -1,0 +1,42 @@
+<mat-sidenav-container autosize class="sideBarContainer">
+	<mat-sidenav mode="side" opened="true" position="end" #sidenav>
+		<mat-nav-list class="sideMenu">
+			<mat-list-item>
+			    <mat-icon matLine routerLink="/" mat-list-icon>home</mat-icon>
+			</mat-list-item>
+			<mat-list-item (click)="toggleCategory('info')" [class.selected]="isCategoryExpanded('info')">
+				<span mat-line>דוחות התפלגות תינוקות יונקים</span>
+				<mat-icon mat-list-icon>{{ isCategoryExpanded('info') ? 'expand_less' : 'expand_more' }}</mat-icon>
+			</mat-list-item>
+			<ng-container *ngIf="isCategoryExpanded('info')">
+				<mat-list-item>
+					<span matLine routerLink='yearly-breastfed-infant-report'
+						mat-line>מגמה שנתית לפי גיל</span>
+				</mat-list-item>
+				<mat-list-item>
+					<span matLine routerLink='monthly-breastfed-infant-report'>אחוז הנקה לפי גיל</span>
+				</mat-list-item>
+			</ng-container>
+			<mat-list-item (click)="toggleCategory('more')" [class.selected]="isCategoryExpanded('more')">
+				<span mat-line>דוחות הפרשי ציון</span>
+				<mat-icon mat-list-icon>{{ isCategoryExpanded('more') ? 'expand_less' : 'expand_more' }}</mat-icon>
+			</mat-list-item>
+			<ng-container *ngIf="isCategoryExpanded('more')">
+				<mat-list-item>
+					<span matLine
+						routerLink='institution-score-differenc-report'>הפרש ציון מהממוצע הארצי</span>
+				</mat-list-item>
+			</ng-container>
+		</mat-nav-list>
+	</mat-sidenav>
+
+	<mat-sidenav-content class="sideNavContect">
+		<mat-toolbar>
+			<h4>פורטל ה - BI של משרד הבריאות</h4>
+			<span class="updated-date">עדכון אחרון: {{ updatedDate }}</span>
+		</mat-toolbar>
+		<!-- <app-home-page></app-home-page> -->
+		<router-outlet></router-outlet> 
+	</mat-sidenav-content>
+
+</mat-sidenav-container>

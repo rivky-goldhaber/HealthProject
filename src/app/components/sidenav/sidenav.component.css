@@ -1,0 +1,25 @@
+.sideBarContainer {
+  min-height: 100vh;
+  height: 100%;
+  padding: 20px;
+  overflow: hidden;
+  transform-origin: top;
+  padding-left: 30px;
+}
+
+.sideNavContect {
+  flex: 1;
+}
+
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.updated-date {
+  font-family: Arial;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
